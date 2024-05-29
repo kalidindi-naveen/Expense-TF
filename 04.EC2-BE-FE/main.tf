@@ -58,7 +58,7 @@ module "records" {
       ]
     },
     {
-      name    = ""
+      name    = var.zone_name
       type    = "A"
       ttl     = 1
       records = [
