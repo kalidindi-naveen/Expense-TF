@@ -56,21 +56,21 @@ resource "aws_security_group_rule" "fe-public" {
 }
 
 resource "aws_security_group_rule" "fe-bastion" {
-  type              = "ingress"
-  from_port         = 22
-  to_port           = 22
-  protocol          = "tcp"
-  cidr_blocks       = module.sg-made-easy-bastion.sg_id
-  security_group_id = module.sg-made-easy-fe.sg_id
+  type                     = "ingress"
+  from_port                = 22
+  to_port                  = 22
+  protocol                 = "tcp"
+  source_security_group_id = module.sg-made-easy-bastion.sg_id
+  security_group_id        = module.sg-made-easy-fe.sg_id
 }
 
 resource "aws_security_group_rule" "fe-ansible" {
-  type              = "ingress"
-  from_port         = 22
-  to_port           = 22
-  protocol          = "tcp"
-  cidr_blocks       = module.sg-made-easy-ansible.sg_id
-  security_group_id = module.sg-made-easy-fe.sg_id
+  type                     = "ingress"
+  from_port                = 22
+  to_port                  = 22
+  protocol                 = "tcp"
+  source_security_group_id = module.sg-made-easy-ansible.sg_id
+  security_group_id        = module.sg-made-easy-fe.sg_id
 }
 
 ### Bastion
