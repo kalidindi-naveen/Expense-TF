@@ -3,6 +3,11 @@ variable "project_name" {
   default = "expense"
 }
 
+variable "environment" {
+  type    = string
+  default = "dev"
+}
+
 variable "common_tags" {
   type = map(any)
   default = {
@@ -10,6 +15,10 @@ variable "common_tags" {
     Environment = "dev",
     Terraform   = "true"
   }
+}
+
+variable "cidr_block" {
+  default = "100.0.0.0/16"
 }
 
 variable "public_subnet_cidrs" {
