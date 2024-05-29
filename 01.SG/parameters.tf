@@ -19,3 +19,15 @@ resource "aws_ssm_parameter" "fe-sg" {
   type  = "String"
   value = module.sg-made-easy-fe.sg_id
 }
+
+resource "aws_ssm_parameter" "bastion-sg" {
+  name  = "/${var.project_name}/${var.environment}/bastion_sg_id"
+  type  = "String"
+  value = module.sg-made-easy-bastion.sg_id
+}
+
+resource "aws_ssm_parameter" "ansible-sg" {
+  name  = "/${var.project_name}/${var.environment}/ansible_sg_id"
+  type  = "String"
+  value = module.sg-made-easy-ansible.sg_id
+}
