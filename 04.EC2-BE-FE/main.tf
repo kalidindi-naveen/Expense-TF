@@ -42,7 +42,7 @@ module "records" {
 
   records = [
     {
-      name    = "backend"
+      name    = "be"
       type    = "A"
       ttl     = 1
       records = [
@@ -50,7 +50,7 @@ module "records" {
       ]
     },
     {
-      name    = "frontend"
+      name    = "fe"
       type    = "A"
       ttl     = 1
       records = [
