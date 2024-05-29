@@ -1,4 +1,4 @@
-resource "aws_ssm_parameter" "foo" {
+resource "aws_ssm_parameter" "this" {
   name  = "/${var.project_name}/${var.environment}/vpc_id"
   type  = "String"
   value = module.vpc-made-easy.vpc_id
@@ -10,6 +10,7 @@ module "vpc-made-easy" {
   common_tags           = var.common_tags
   project_name          = var.project_name
   cidr_block            = var.cidr_block
+  environment           = var.environment
   public_subnet_cidrs   = var.public_subnet_cidrs
   private_subnet_cidrs  = var.private_subnet_cidrs
   database_subnet_cidrs = var.database_subnet_cidrs
