@@ -4,22 +4,24 @@ resource "aws_ssm_parameter" "this" {
   value = module.vpc-made-easy.vpc_id
 }
 
+### ["id1","id2"] List Format
+### id1,id2 StringList Format
 resource "aws_ssm_parameter" "pub_subnet_ids" {
   name  = "/${var.project_name}/${var.environment}/pub_subnet_ids"
   type  = "StringList"
-  value = module.vpc-made-easy.pub_subnet_ids
+  value = join(",",module.vpc-made-easy.pub_subnet_ids)
 }
 
 resource "aws_ssm_parameter" "pri_subnet_ids" {
   name  = "/${var.project_name}/${var.environment}/pri_subnet_ids"
   type  = "StringList"
-  value = module.vpc-made-easy.pri_subnet_ids
+  value = join(",",module.vpc-made-easy.pri_subnet_ids)
 }
 
 resource "aws_ssm_parameter" "db_subnet_ids" {
   name  = "/${var.project_name}/${var.environment}/db_subnet_ids"
   type  = "StringList"
-  value = module.vpc-made-easy.pub_subnet_ids
+  value = join(",",module.vpc-made-easy.pub_subnet_ids)
 }
 
 module "vpc-made-easy" {
