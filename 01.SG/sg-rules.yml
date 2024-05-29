@@ -48,7 +48,7 @@
   - name: bastion_public
     desc: bastion to public
     source: public # Ideally we give home IP Address
-    port: 80
+    port: 22
 
   ansible:
   - name: ansible_public
