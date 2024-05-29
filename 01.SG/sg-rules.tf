@@ -21,6 +21,6 @@ resource "aws_security_group_rule" "fe" {
   from_port         = 80
   to_port           = 80
   protocol          = "tcp"
-  ipv4_cidr_blocks  = ["0.0.0.0/0"]
+  cidr_blocks       = ["0.0.0.0/0"]
   security_group_id = module.sg-made-easy-fe.sg_id
 }
