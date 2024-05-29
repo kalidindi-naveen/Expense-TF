@@ -12,7 +12,7 @@ module "bastion-made-easy" {
   name = "bastion"
   ami  = data.aws_ami.ami_id.id
 
-  instance_type          = "t3.micro"
+  instance_type          = "t2.micro"
   monitoring             = true
   vpc_security_group_ids = [data.aws_ssm_parameter.this.value]
   subnet_id              = element(split(",", data.aws_ssm_parameter.pub_subnet_ids.value), 0)
