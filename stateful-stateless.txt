@@ -1,0 +1,25 @@
+State == Storage
+
+MySql = Data is Stored == Stateful Application
+
+Backend = not Store Data == Stateless Application
+
+Frontend = no Store Data == Stateless Application
+
+Note: Very difficult to restore data from Statefull Application
+
+Easy to restore Backend & Frontend Application
+
+DB Admin Team's
+---------------
+Every day or Every 6 hrs or Every 3 hrs Backup Data 
+Test the Backup/Restore Data 
+Maintain High Availability (at least 2 Server)
+Data Replication(duplicate data into another server for safety)
+load Balancing 
+Major Upgrade -- 5.3 to 5.4
+Minor Upgrade -- 5.3.1 to 5.3.2
+
+Use Cloud Vendor they will manage
+---------------------------------
+upgrades, High Availability, Load Balancing, Snapshot/Backup

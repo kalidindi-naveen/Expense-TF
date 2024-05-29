@@ -1,0 +1,8 @@
+Bastion Host or Jump Server
+
+To Access Resources Created inside Private Subnet we need Bastion-Host
+
+Create EC2 instance in public subnet -- Bastion-Host
+Allow BE & DB to connect to Bastion-Host
+
+user to Bastion Host to BE/DB 

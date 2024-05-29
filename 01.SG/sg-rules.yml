@@ -1,0 +1,57 @@
+- name: SG Rules
+  sg:
+  - expense-dev-db
+  - expense-dev-be
+  - expense-dev-fe
+  - expense-dev-bastion
+  - expense-dev-ansible
+
+  db:
+  - name: db_be
+    desc: db to be 
+    source: be 
+    port: 3306
+  - name: db_bastion
+    desc: db to bastion
+    source: bastion
+    port: 3306
+
+  be:
+  - name: be_fe
+    desc: be to fe
+    source: fe
+    port: 8080
+  - name: be_bastion 
+    desc: be to bastion 
+    source: bastion 
+    port: 22 
+  - name: be_ansible
+    desc: be to ansible 
+    source: ansible 
+    port: 22
+
+  fe:
+  - name: fe_public
+    desc: be to public
+    source: public
+    port: 80
+  - name: fe_bastion 
+    desc: fe to bastion 
+    source: bastion 
+    port: 22 
+  - name: fe_ansible
+    desc: fe to ansible 
+    source: ansible 
+    port: 22
+
+  bastion:
+  - name: bastion_public
+    desc: bastion to public
+    source: public # Ideally we give home IP Address
+    port: 80
+
+  ansible:
+  - name: ansible_public
+    desc: ansible to public
+    source: public # Ideally we give home IP Address
+    port: 22
