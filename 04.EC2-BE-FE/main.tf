@@ -33,3 +33,37 @@ module "fe-made-easy" {
       Name = "${var.project_name}-${var.environment}-fe"
   })
 }
+
+module "records" {
+  source  = "terraform-aws-modules/route53/aws//modules/records"
+  version = "~> 2.0"
+
+  zone_name = var.zone_name
+
+  records = [
+    {
+      name    = "backend"
+      type    = "A"
+      ttl     = 1
+      records = [
+        module.be-made-easy.private_ip
+      ]
+    },
+    {
+      name    = "frontend"
+      type    = "A"
+      ttl     = 1
+      records = [
+        module.fe-made-easy.private_ip
+      ]
+    },
+    {
+      name    = ""
+      type    = "A"
+      ttl     = 1
+      records = [
+        module.fe-made-easy.public_ip
+      ]
+    },
+  ]
+}
