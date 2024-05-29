@@ -24,6 +24,7 @@ module "fe-made-easy" {
 
   instance_type          = "t2.micro"
   monitoring             = true
+  associate_public_ip_address = true
   vpc_security_group_ids = [data.aws_ssm_parameter.fe_sg_id.value]
   subnet_id              = element(split(",", data.aws_ssm_parameter.pub_subnet_ids.value), 0)
 
@@ -58,7 +59,7 @@ module "records" {
       ]
     },
     {
-      name    = var.zone_name
+      name    = ""
       type    = "A"
       ttl     = 1
       records = [
