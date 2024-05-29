@@ -13,8 +13,8 @@ resource "aws_security_group_rule" "db-bastion" {
   from_port                = 3306
   to_port                  = 3306
   protocol                 = "tcp"
-  source_security_group_id = module.sg-made-easy-be.sg_id
-  security_group_id        = module.sg-made-easy-bastion.sg_id
+  source_security_group_id = module.sg-made-easy-bastion.sg_id
+  security_group_id        = module.sg-made-easy-db.sg_id
 }
 
 ### BE
