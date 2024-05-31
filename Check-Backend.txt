@@ -2,3 +2,10 @@
 Warning: Permanently added '100.0.11.153' (ECDSA) to the list of known hosts.
 ec2-user@100.0.11.153's password:DevOps321
 
+[ ec2-user@ip-100-0-11-153 ~ ]$ netstat -lntp
+(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -
+tcp6       0      0 :::22                   :::*                    LISTEN      -
