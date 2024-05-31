@@ -1,0 +1,4 @@
+[ ec2-user@ip-100-0-1-15 ~ ]$ ssh ec2-user@100.0.11.153
+Warning: Permanently added '100.0.11.153' (ECDSA) to the list of known hosts.
+ec2-user@100.0.11.153's password:DevOps321
+
