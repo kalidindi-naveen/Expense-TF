@@ -1,0 +1,37 @@
+[ ec2-user@ip-100-0-11-153 ~ ]$ mysql -h db.step-into-iot.cloud -u root -pExpenseApp1
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| transactions       |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> use transactions;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++------------------------+
+| Tables_in_transactions |
++------------------------+
+| transactions           |
++------------------------+
+1 row in set (0.00 sec)
+
+mysql> select * from transactions;
++----+--------+-------------+
+| id | amount | description |
++----+--------+-------------+
+|  1 |      0 | v           |
+|  2 |     34 | food        |
++----+--------+-------------+
+2 rows in set (0.00 sec)
+
+mysql> exit
+Bye

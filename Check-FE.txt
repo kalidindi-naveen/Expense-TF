@@ -1,0 +1,21 @@
+Login to Bastion Host 
+---------------------
+[ ec2-user@ip-100-0-1-15 ~ ]$ ssh ec2-user@100.0.1.187
+Warning: Permanently added '100.0.1.187' (ECDSA) to the list of known hosts.
+ec2-user@100.0.1.187's password:
+
+34.230.50.170 | 100.0.1.187 | t2.micro | null
+[ ec2-user@ip-100-0-1-187 ~ ]$ systemctl status nginx
+● nginx.service - The nginx HTTP and reverse proxy server
+     Loaded: loaded (/usr/lib/systemd/system/nginx.service; enabled; preset: disabled)
+     Active: active (running) since Fri 2024-05-31 06:01:02 UTC; 44min ago
+    Process: 15661 ExecStartPre=/usr/bin/rm -f /run/nginx.pid (code=exited, status=0/SUCCESS)
+    Process: 15662 ExecStartPre=/usr/sbin/nginx -t (code=exited, status=0/SUCCESS)
+    Process: 15663 ExecStart=/usr/sbin/nginx (code=exited, status=0/SUCCESS)
+   Main PID: 15664 (nginx)
+      Tasks: 2 (limit: 4300)
+     Memory: 2.3M
+        CPU: 92ms
+     CGroup: /system.slice/nginx.service
+             ├─15664 "nginx: master process /usr/sbin/nginx"
+             └─15665 "nginx: worker process"
