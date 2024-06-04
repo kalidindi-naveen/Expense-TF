@@ -8,6 +8,10 @@ variable "environment" {
   default = "dev"
 }
 
+variable "azs" {
+  default = ["us-east-1a", "us-east-1b"]
+}
+
 variable "common_tags" {
   type = map(any)
   default = {

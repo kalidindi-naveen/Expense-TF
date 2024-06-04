@@ -9,19 +9,19 @@ resource "aws_ssm_parameter" "this" {
 resource "aws_ssm_parameter" "pub_subnet_ids" {
   name  = "/${var.project_name}/${var.environment}/pub_subnet_ids"
   type  = "StringList"
-  value = join(",",module.vpc-made-easy.pub_subnet_ids)
+  value = join(",", module.vpc-made-easy.pub_subnet_ids)
 }
 
 resource "aws_ssm_parameter" "pri_subnet_ids" {
   name  = "/${var.project_name}/${var.environment}/pri_subnet_ids"
   type  = "StringList"
-  value = join(",",module.vpc-made-easy.pri_subnet_ids)
+  value = join(",", module.vpc-made-easy.pri_subnet_ids)
 }
 
 resource "aws_ssm_parameter" "db_subnet_ids" {
   name  = "/${var.project_name}/${var.environment}/db_subnet_ids"
   type  = "StringList"
-  value = join(",",module.vpc-made-easy.pub_subnet_ids)
+  value = join(",", module.vpc-made-easy.pub_subnet_ids)
 }
 
 resource "aws_ssm_parameter" "db_subnet_group_name" {
@@ -47,4 +47,5 @@ module "vpc-made-easy" {
   private_subnet_cidrs  = var.private_subnet_cidrs
   database_subnet_cidrs = var.database_subnet_cidrs
   enable_peering        = var.enable_peering
+  azs                   = var.azs
 }
